@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- This is a first example of using a template -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Abdullah Alam">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Driven Website | Animals</title>
+    <!-- include our css files -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="assignment.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		          		<span class="sr-only">Toggle navigation</span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		    	   	</button>
+                <a class="navbar-brand" href="index.html">Data Driven Website | Animals</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- put your HTML here -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Data Driven Website | Animals</h1>
+        </div>
+        <ol class="breadcrumb">
+            <li><a href="#" id="categories-crumb">Home</a></li>
+        </ol>
+        <div id="content" role="main">
+        </div>
+        <hr>
+    </div>
+
+    <!-- include our js libraries files -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="AnimalsData.js"></script>
+    <script src="assignment.js"></script>
+    <script id="categories-template" type="text/x-handlebars-template">
+        <div class="row">
+            <div class="col-md-12">
+                <p id="paragraph">Choose an animal categories: Reptiles, Mammals, Birds</p>
+            </div>
+        </div>
+        <div class="row">
+            {{#each category}}
+            <div class="col-md-4">
+                <div class="category-thumbnail" data-id="{{@index}}">
+                    <h2>{{name}}</h2>
+                    <img src="{{animals.[2].image1}}" alt="" class="img-responsive img-rounded">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <script id="category-template" type="text/x-handlebars-template">
+        <div class="row">
+            <div class="col-md-12">
+                <p id="paragraph">Choose an animal for more info:</p>
+            </div>
+        </div>
+        <div class="row">
+            {{#each animals}}
+            <div class="col-md-3">
+                <div class="animal-thumbnail" data-id="{{@index}}">
+                    <h2>{{name}}</h2>
+                    <img src="{{image1}}" alt="" class="img-responsive img-rounded">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <script id="animal-template" type="text/x-handlebars-template">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{{name}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{image1}}" alt="" class="img-responsive img-rounded">
+                <br>
+                <img src="{{image2}}" alt="" class="img-responsive img-rounded">
+            </div>
+
+            <div class="col-md-9">
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </script>
+    <script id="breadcrumb-template" type="text/x-handlebars-template">
+        <li><a href="#" id="{{type}}-crumb">{{name}}</a></li>
+    </script>
+</body>
+
+</html>

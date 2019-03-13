@@ -1,0 +1,92 @@
+/* put your css code here */
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+.footer {
+    text-align: right;
+}
+
+p {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background: #94B647;
+}
+
+.breadcrumb {
+    background: #3A4237;
+}
+
+#paragraph {
+    text-align: center;
+    font-size: 20px;
+}
+
+a {
+    color: white;
+}
+
+@media(max-width: 767px) {
+    h1 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    #paragraph {
+        text-align: center;
+        font-size: 15px;
+    }
+    .breadcrumb {
+        font-size: 12px;
+    }
+    .navbar-brand {
+        font-size: 13px;
+    }
+}
+
+.animal-thumbnail {
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 210px;
+    position: relative;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.animal-thumbnail img {
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.animal-thumbnail img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.category-thumbnail {
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 310px;
+    position: relative;
+    border: none;
+    margin-bottom: 5px;
+}
